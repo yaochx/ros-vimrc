@@ -7,6 +7,7 @@ let mapleader=","
 
 " filetype func off
 filetype off
+filetype plugin on
 
 " initialize vundle
 set rtp+=~/.vim/bundle/Vundle.vim
