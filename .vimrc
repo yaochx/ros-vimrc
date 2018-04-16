@@ -7,7 +7,6 @@ let mapleader=","
 
 " filetype func off
 filetype off
-filetype plugin on
 
 " initialize vundle
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -94,8 +93,13 @@ set iskeyword+=_,$,@,%,#,-
 set swapfile
 set dir=~/.vim/swap
 
-let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
-nnoremap <leader>jd :YcmCompleterGoToDefinitionElseDeclaration<CR>
+let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
+nnoremap <leader>jl :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>jd :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>jj :YcmCompleter GoToDefinitionElseDeclaration<CR>
+let g:ycm_error_symbol = '>>'
+let g:ycm_warning_symbol = '>*'
+nmap <F3> :YcmDiags<CR>
 
 map <C-f> :NERDTree<CR>
 map <F4> :NERDTreeToggle<CR>
