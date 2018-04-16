@@ -43,3 +43,12 @@
 [submodule "bundle/vim-easytags"]
 	path = bundle/vim-easytags
 	url = https://github.com/xolox/vim-easytags.git
+[submodule "bundle/vim-clang-format"]
+	path = bundle/vim-clang-format
+	url = https://github.com/rhysd/vim-clang-format.git
+[submodule "bundle/color_coded"]
+	path = bundle/color_coded
+	url = https://github.com/jeaye/color_coded.git
+[submodule "bundle/YCM-Generator"]
+	path = bundle/YCM-Generator
+	url = https://github.com/rdnetto/YCM-Generator.git

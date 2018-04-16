@@ -27,6 +27,9 @@ Plugin 'vim-scripts/taglist.vim'
 Plugin 'taketwo/vim-ros'
 Plugin 'ohmystack/python-vim'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'jeaye/color_coded'
+Plugin 'rdnetto/YCM-Generator'
+Plugin 'rhysd/vim-clang-format'
 
 " stop - all plugins above
 call vundle#end()
@@ -92,14 +95,47 @@ set iskeyword+=_,$,@,%,#,-
 " NerdTree s/gs split need swap
 set swapfile
 set dir=~/.vim/swap
+" color_coded switch
+let g:color_coded_enabled = 1
+" color coded file types
+let g:color_coded_filetypes = ['c', 'cpp', 'cc', 'objc', 'h', 'hpp']
 
 let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
+"" turn on completion in comments
+let g:ycm_complete_in_comments=1
+"" load ycm conf by default
+let g:ycm_confirm_extra_conf=0
+"" turn on tag completion
+let g:ycm_collect_identifiers_from_tags_files=1
+"" only show completion as a list instead of a sub-window
+set completeopt-=preview
+"" start completion from the first character
+let g:ycm_min_num_of_chars_for_completion=1
+"" don't cache completion items
+let g:ycm_cache_omnifunc=0
+"" complete syntax keywords
+let g:ycm_seed_identifiers_with_syntax=1
 nnoremap <leader>jl :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>jd :YcmCompleter GoToDefinition<CR>
 nnoremap <leader>jj :YcmCompleter GoToDefinitionElseDeclaration<CR>
 let g:ycm_error_symbol = '>>'
 let g:ycm_warning_symbol = '>*'
 nmap <F3> :YcmDiags<CR>
+
+let g:clang_format#code_style = "google"
+let g:clang_format#style_options = {
+            \ "AccessModifierOffset" : -4,
+            \ "AllowShortIfStatementsOnASingleLine" : "true",
+            \ "AlwaysBreakTemplateDeclarations" : "true",
+            \ "Standard" : "C++11"}
+
+" map to <Leader>cf in C++ code
+autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
+autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
+" if you install vim-operator-user
+" autocmd FileType c,cpp,objc map <buffer><Leader>x <Plug>(operator-clang-format)
+" Toggle auto formatting:
+nmap <Leader>C :ClangFormatAutoToggle<CR>
 
 map <C-f> :NERDTree<CR>
 map <F4> :NERDTreeToggle<CR>
