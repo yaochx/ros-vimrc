@@ -1,6 +1,9 @@
 # ros-vimrc
 config vim for ros development
 
+**NOTICE**
+* To tell rospack your packages, before openning vim, please source devel/setup.zsh or source devel/setup.bash 
+
 **setup**
 * ln -s <this repo dir>/.vimrc ~/.vimrm
 * edit <this repo dir>/.ycm_extra_cfg.py according to yourself
