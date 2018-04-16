@@ -143,12 +143,8 @@ map <F4> :NERDTreeToggle<CR>
 nmap J 5j  
 nmap K 5k  
   
-" Ctrl+a
+" all selected Ctrl+a
 nmap <silent> <C-a> ggvG$  
-" 选中状态下 Ctrl+c 复制  
-vnoremap <c-c> "+y  
-" Ctrl+v  
-nmap <silent> <C-v> "+p  
 
 " 在 vim 启动的时候默认开启 NERDTree（autocmd 可以缩写为 au）
 autocmd VimEnter * NERDTree
