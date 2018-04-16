@@ -72,7 +72,7 @@ let g:ycm_semantic_triggers = {
             \ }
 
 set background=dark
-set colorcolumn=80
+set colorcolumn=120
 set fencs=utf-8,gbk,latin1
 set autoindent
 set cindent
@@ -116,7 +116,7 @@ let g:ycm_cache_omnifunc=0
 "" complete syntax keywords
 let g:ycm_seed_identifiers_with_syntax=1
 nnoremap <leader>jl :YcmCompleter GoToDeclaration<CR>
-nnoremap <leader>jd :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>jk :YcmCompleter GoToDefinition<CR>
 nnoremap <leader>jj :YcmCompleter GoToDefinitionElseDeclaration<CR>
 let g:ycm_error_symbol = '>>'
 let g:ycm_warning_symbol = '>*'
@@ -124,9 +124,12 @@ nmap <F3> :YcmDiags<CR>
 
 let g:clang_format#code_style = "google"
 let g:clang_format#style_options = {
-            \ "AccessModifierOffset" : -4,
-            \ "AllowShortIfStatementsOnASingleLine" : "true",
-            \ "AlwaysBreakTemplateDeclarations" : "true",
+            \ "PointerAlignment" : "Right",
+            \ "BreakBeforeBraces" : "Attach",
+            \ "AllowShortBlocksOnASingleLine" : "false",
+            \ "AllowShortFunctionsOnASingleLine" : "false",
+            \ "Cpp1111BracedListStyle" : "true",
+            \ "CommentProgmas" : "'^ NOLINT'", 
             \ "Standard" : "C++11"}
 
 " map to <Leader>cf in C++ code
@@ -134,8 +137,6 @@ autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
 autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
 " if you install vim-operator-user
 " autocmd FileType c,cpp,objc map <buffer><Leader>x <Plug>(operator-clang-format)
-" Toggle auto formatting:
-nmap <Leader>C :ClangFormatAutoToggle<CR>
 
 map <C-f> :NERDTree<CR>
 map <F4> :NERDTreeToggle<CR>
