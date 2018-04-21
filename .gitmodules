@@ -52,3 +52,9 @@
 [submodule "bundle/YCM-Generator"]
 	path = bundle/YCM-Generator
 	url = https://github.com/rdnetto/YCM-Generator.git
+[submodule "bundle/vim-cmake-syntax"]
+	path = bundle/vim-cmake-syntax
+	url = git://github.com/nickhutchinson/vim-cmake-syntax.git
+[submodule "bundle/cmake.vim"]
+	path = bundle/cmake.vim
+	url = https://github.com/jalcine/cmake.vim.git

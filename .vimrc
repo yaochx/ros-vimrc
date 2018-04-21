@@ -30,6 +30,8 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'jeaye/color_coded'
 Plugin 'rdnetto/YCM-Generator'
 Plugin 'rhysd/vim-clang-format'
+Plugin 'jalcine/cmake.vim'
+Plugin 'nickhutchinson/vim-cmake-syntax'
 
 " stop - all plugins above
 call vundle#end()
@@ -42,7 +44,6 @@ colorscheme gruvbox
 
 syntax on
 " For mouse click in NERDTree
-" nerdtree
 set mouse=a
 let g:NERDTreeMouseMode=3 
 " ctrlp
@@ -60,6 +61,15 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 " taglist
+" c language
+let s:tlist_def_c_settings = 'c;d:macro;g:enum;s:struct;u:union;t:typedef;' .
+                           \ 'v:variable;f:function'
+
+" c++ language
+let s:tlist_def_cpp_settings = 'c++;n:namespace;v:variable;d:macro;t:typedef;' .
+                             \ 'c:class;g:enum;s:struct;u:union;f:function;m:member;' .
+                              \ 'p:prototype;l:local'
+
 let Tlist_Ctags_Cmd = '/usr/bin/ctags'
 let Tlist_Show_One_File = 1            "不同时显示多个文件的tag，只显示当前文件的
 let Tlist_Exit_OnlyWindow = 1          "如果taglist窗口是最后一个窗口，则退出vim
@@ -100,7 +110,7 @@ let g:color_coded_enabled = 1
 " color coded file types
 let g:color_coded_filetypes = ['c', 'cpp', 'cc', 'objc', 'h', 'hpp']
 
-let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf='/home/chengxiang/.vim/.ycm_extra_conf.py'
 "" turn on completion in comments
 let g:ycm_complete_in_comments=1
 "" load ycm conf by default
@@ -148,7 +158,7 @@ nmap K 5k
 nmap <silent> <C-a> ggvG$  
 
 " 在 vim 启动的时候默认开启 NERDTree（autocmd 可以缩写为 au）
-autocmd VimEnter * NERDTree
+" autocmd VimEnter * NERDTree
 "
 " 当打开 NERDTree 窗口时，自动显示 Bookmarks
 let NERDTreeShowBookmarks=1
