@@ -26,7 +26,7 @@ Plugin 'vim-scripts/taglist.vim'
 Plugin 'taketwo/vim-ros'
 Plugin 'ohmystack/python-vim'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'jeaye/color_coded'
+Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'rdnetto/YCM-Generator'
 Plugin 'rhysd/vim-clang-format'
 Plugin 'jalcine/cmake.vim'
@@ -71,6 +71,15 @@ let Tlist_Show_One_File = 1            "不同时显示多个文件的tag，只�
 let Tlist_Exit_OnlyWindow = 1          "如果taglist窗口是最后一个窗口，则退出vim
 let Tlist_Use_Right_Window = 1         "在右侧窗口中显示taglist窗口 
 map <silent> <F9> :TlistToggle<cr>
+
+" vim_cpp_enhanced_highlight
+let g:cpp_class_scope_highlight = 1
+let g:cpp_member_variable_highlight = 1
+let g:cpp_class_decl_highlight = 1
+let g:cpp_experimental_template_highlight = 1
+let g:cpp_concepts_highlight = 1
+let g:cpp_no_function_highlight = 1
+
 " vim ros
 let g:ycm_semantic_triggers = {
             \   'roslaunch' : ['="', '$(', '/'],
@@ -101,10 +110,6 @@ set iskeyword+=_,$,@,%,#,-
 " NerdTree s/gs split need swap
 set swapfile
 set dir=~/.vim/swap
-" color_coded switch
-let g:color_coded_enabled = 1
-" color coded file types
-let g:color_coded_filetypes = ['c', 'cpp', 'cc', 'objc', 'h', 'hpp']
 
 let g:ycm_global_ycm_extra_conf='/home/chengxiang/.vim/.ycm_extra_conf.py'
 "" turn on completion in comments
