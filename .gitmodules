@@ -58,3 +58,6 @@
 [submodule "bundle/cmake.vim"]
 	path = bundle/cmake.vim
 	url = https://github.com/jalcine/cmake.vim.git
+[submodule "bundle/lightline.vim"]
+	path = bundle/lightline.vim
+	url = https://github.com/itchyny/lightline.vim
