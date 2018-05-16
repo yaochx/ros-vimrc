@@ -3,6 +3,7 @@
 
 " no vi compat
 set nocompatible
+set clipboard=unnamedplus
 let mapleader=","
 
 " filetype func off
@@ -10,6 +11,31 @@ filetype off
 
 " initialize vundle
 set rtp+=~/.vim/bundle/Vundle.vim
+" fast saving
+nmap <leader>w :w!<cr>
+" :W sudo saves
+command W w !sudo tee % > /dev/null
+" deleete buffer except current file
+function! Buflist() 
+    redir => bufnames 
+    silent ls 
+    redir END 
+    let list = [] 
+    for i in split(bufnames, "\n") 
+        let buf = split(i, '"' ) 
+        call add(list, buf[-2]) 
+|   endfor 
+    return list 
+endfunction 
+
+function! Bdeleteonly() 
+    let list = filter(Buflist(), 'v:val != bufname("%")') 
+    for buffer in list 
+        exec "bdelete ".buffer 
+    endfor 
+endfunction 
+
+command Bdonly silent call Bdeleteonly()
 
 call vundle#rc()
 call vundle#begin()
