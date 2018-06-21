@@ -57,7 +57,7 @@ Plugin 'rdnetto/YCM-Generator'
 Plugin 'rhysd/vim-clang-format'
 Plugin 'jalcine/cmake.vim'
 Plugin 'nickhutchinson/vim-cmake-syntax'
-
+Plugin 'tell-k/vim-autopep8'
 " stop - all plugins above
 call vundle#end()
 
