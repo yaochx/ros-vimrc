@@ -137,7 +137,7 @@ set iskeyword+=_,$,@,%,#,-
 set swapfile
 set dir=~/.vim/swap
 
-let g:ycm_global_ycm_extra_conf='/home/chengxiang/.vim/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf='/home/collin/.vim/.ycm_extra_conf.py'
 "" turn on completion in comments
 let g:ycm_complete_in_comments=1
 "" load ycm conf by default
