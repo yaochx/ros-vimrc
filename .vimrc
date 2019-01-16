@@ -186,6 +186,8 @@ nmap <silent> <C-a> ggvG$
 
 " 在 vim 启动的时候默认开启 NERDTree（autocmd 可以缩写为 au）
 autocmd VimEnter * NERDTree
+" focus on main window
+autocmd VimEnter * wincmd p
 "
 " 当打开 NERDTree 窗口时，自动显示 Bookmarks
 let NERDTreeShowBookmarks=1
@@ -202,5 +204,11 @@ let g:NERDTreeIndicatorMapCustom = {
     \ 'Ignored'   : '☒',
     \ "Unknown"   : "?"
     \ }
+" automatically close NerdTree
+let NERDTreeQuitOnOpen = 1
+
+" delete file buffer after delete file with nerdtree
+let NERDTreeAutoDeleteBuffer = 1
+
 " vim-gitgutter
 let g:gitgutter_async=0
