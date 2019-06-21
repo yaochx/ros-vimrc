@@ -6,7 +6,7 @@ config vim for ros development
 
 **setup**
 * git clone https://github.com/yaochx/ros-vimrc ~/.vim
-* ln -s ~/.vim/.vimrc ~/.vimrm
+* ln -s ~/.vim/.vimrc ~/.vimrc
 * edit ~/.vim/.ycm_extra_cfg.py according to yourself
 * cd ~/.vim
 * git submodule update --init --recursive
