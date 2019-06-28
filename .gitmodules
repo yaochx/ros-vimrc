@@ -67,3 +67,6 @@
 [submodule "bundle/vim-autopep8"]
 	path = bundle/vim-autopep8
 	url = https://github.com/tell-k/vim-autopep8.git
+[submodule "bundle/grep.vim"]
+	path = bundle/grep.vim
+	url = https://github.com/vim-scripts/grep.vim.git
