@@ -43,7 +43,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'morhetz/gruvbox'
-Plugin 'sickill/vim-monokai'
+Plugin 'ErichDonGubler/vim-sublime-monokai'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -70,7 +70,7 @@ filetype plugin indent on
 syntax enable
 set termguicolors
 
-colorscheme monokai
+colorscheme sublimemonokai
 "colorscheme gruvbox
 
 " cpp syntax for bracket issue
