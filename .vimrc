@@ -15,7 +15,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 nmap <leader>w :w!<cr>
 " :W sudo saves
 command W w !sudo tee % > /dev/null
-" deleete buffer except current file
+" delete buffer except current file
 function! Buflist() 
     redir => bufnames 
     silent ls 
@@ -43,13 +43,14 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'morhetz/gruvbox'
+Plugin 'sickill/vim-monokai'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'itchyny/lightline.vim'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'vim-scripts/taglist.vim'
-Plugin 'taketwo/vim-ros'
+"Plugin 'taketwo/vim-ros'
 Plugin 'ohmystack/python-vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'octol/vim-cpp-enhanced-highlight'
@@ -58,6 +59,7 @@ Plugin 'rhysd/vim-clang-format'
 Plugin 'jalcine/cmake.vim'
 Plugin 'nickhutchinson/vim-cmake-syntax'
 Plugin 'tell-k/vim-autopep8'
+Plugin 'vim-scripts/grep.vim'
 " stop - all plugins above
 call vundle#end()
 
@@ -65,7 +67,9 @@ call vundle#end()
 filetype plugin indent on
 
 " set color
-colorscheme gruvbox
+syntax enable
+colorscheme monokai
+"colorscheme gruvbox
 
 syntax on
 " For mouse click in NERDTree
@@ -124,7 +128,7 @@ set ts=4
 set sw=4
 set expandtab 
 set autoread 
-set autowrite
+set autowriteall
 
 " highlight cursor line
 set cursorline
@@ -137,7 +141,7 @@ set iskeyword+=_,$,@,%,#,-
 set swapfile
 set dir=~/.vim/swap
 
-let g:ycm_global_ycm_extra_conf='/home/collin/.vim/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf='/home/pony/.vim/.ycm_extra_conf.py'
 "" turn on completion in comments
 let g:ycm_complete_in_comments=1
 "" load ycm conf by default
@@ -175,7 +179,7 @@ autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
 " if you install vim-operator-user
 " autocmd FileType c,cpp,objc map <buffer><Leader>x <Plug>(operator-clang-format)
 
-map <C-f> :NERDTree<CR>
+map <C-t> :NERDTree<CR>
 map <F4> :NERDTreeToggle<CR>
 
 nmap J 5j  

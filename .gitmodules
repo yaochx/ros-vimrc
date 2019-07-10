@@ -70,3 +70,9 @@
 [submodule "bundle/grep.vim"]
 	path = bundle/grep.vim
 	url = https://github.com/vim-scripts/grep.vim.git
+[submodule "vim-monokai"]
+	path = vim-monokai
+	url = https://github.com/sickill/vim-monokai.git
+[submodule "bundle/vim-monokai"]
+	path = bundle/vim-monokai
+	url = https://github.com/sickill/vim-monokai.git
