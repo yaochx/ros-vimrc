@@ -53,7 +53,7 @@ Plugin 'vim-scripts/taglist.vim'
 "Plugin 'taketwo/vim-ros'
 Plugin 'ohmystack/python-vim'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'bfrg/vim-cpp-modern'
 Plugin 'rdnetto/YCM-Generator'
 Plugin 'rhysd/vim-clang-format'
 Plugin 'jalcine/cmake.vim'
@@ -68,10 +68,14 @@ filetype plugin indent on
 
 " set color
 syntax enable
+set termguicolors
+
 colorscheme monokai
 "colorscheme gruvbox
 
-syntax on
+" cpp syntax for bracket issue
+let c_no_curly_error = 1
+
 " For mouse click in NERDTree
 set mouse=a
 let g:NERDTreeMouseMode=3 
