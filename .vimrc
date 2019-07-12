@@ -70,11 +70,8 @@ filetype plugin indent on
 syntax enable
 set termguicolors
 
-colorscheme sublimemonokai
-"colorscheme gruvbox
-
-" cpp syntax for bracket issue
-let c_no_curly_error = 1
+"colorscheme sublimemonokai
+colorscheme gruvbox
 
 " For mouse click in NERDTree
 set mouse=a
@@ -112,7 +109,18 @@ let g:cpp_member_variable_highlight = 1
 let g:cpp_class_decl_highlight = 1
 let g:cpp_experimental_template_highlight = 1
 let g:cpp_concepts_highlight = 1
-let g:cpp_no_function_highlight = 1
+" Disable function highlighting (affects both C and C++ files)
+let g:cpp_no_function_highlight = 0
+
+" Put all standard C and C++ keywords under Vim's highlight group `Statement`
+" (affects both C and C++ files)
+let g:cpp_simple_highlight = 1
+
+" Enable highlighting of named requirements (C++20 library concepts)
+let g:cpp_named_requirements_highlight = 1
+
+" braces in braces issue
+let c_no_curly_error = 1
 
 " vim ros
 let g:ycm_semantic_triggers = {
