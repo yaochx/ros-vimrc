@@ -9,6 +9,6 @@ config vim for ros development
 * edit ~/.vim/.ycm_extra_cfg.py according to yourself
 * cd ~/.vim
 * git submodule update --init --recursive
-* goto *~/.vim/bundle/YouCompleteMe/README.md* to config YouCompleteme, follow the clear installation instructions
-* mkdir ~/.vim/swap
+* goto './bundle/YouCompleteMe'
+* python3 install.py --clangd-completer --go-completer
 * ln -s ~/.vim/.vimrc ~/.vimrc
