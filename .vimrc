@@ -1,13 +1,14 @@
 " ~/.vimrc
 "
 
-" no vi compat
+" Vundle required 
 set nocompatible
-set clipboard=unnamedplus
+filetype off
+
+set clipboard=unnamed,unnamedplus
 let mapleader=","
 
 " filetype func off
-" filetype off
 
 " initialize vundle
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -65,12 +66,12 @@ Plugin 'condy0919/docom.vim'
 call vundle#end()
 
 " filetype func on
+filetype plugin indent on
 filetype plugin on
-filetype plugin indent off
 
 " set color
 syntax enable
-set termguicolors
+" set termguicolors
 
 "colorscheme sublimemonokai
 colorscheme gruvbox
@@ -134,7 +135,7 @@ let g:ycm_semantic_triggers = {
             \ }
 
 set background=dark
-set colorcolumn=160
+set colorcolumn=100
 set fencs=utf-8,gbk,latin1
 set nu
 set ru
@@ -142,8 +143,6 @@ set ts=4
 set ss=4
 set sw=4
 set autoindent
-set smartindent
-set cindent
 set hlsearch
 set expandtab 
 set autoread 
