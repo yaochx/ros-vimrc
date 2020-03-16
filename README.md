@@ -11,7 +11,6 @@ config vim for ros development
 * cd ~/.vim
 * git submodule update --init --recursive
 * start vim, install plugins by ":PluginInstall"
-* again, git submodule update --init --recursive
 * goto './bundle/YouCompleteMe'
 * python3 install.py --clangd-completer --go-completer
 
