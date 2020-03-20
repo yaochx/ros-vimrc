@@ -66,7 +66,7 @@ Plugin 'condy0919/docom.vim'
 call vundle#end()
 
 " filetype func on
-filetype plugin indent on
+" filetype plugin indent on
 filetype plugin on
 
 " set color
@@ -149,7 +149,9 @@ set autoread
 set autowriteall
 
 " highlight cursor line
+colorscheme desert
 set cursorline
+hi CursorLine term=bold cterm=bold guibg=Grey40
 set smartindent
 
 " 带有如下符号的单词不要被换行分割
