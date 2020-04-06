@@ -83,13 +83,13 @@ let g:NERDTreeMouseMode=3
 let g:ctrlp_working_path_mode='ra'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " ignored files on MacOSX/Linux
 " syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
 " taglist
 " c language
 let s:tlist_def_c_settings = 'c;d:macro;g:enum;s:struct;u:union;t:typedef;' .
@@ -161,7 +161,7 @@ set iskeyword+=_,$,@,%,#,-
 set swapfile
 set dir=~/.vim/swap
 
-let g:ycm_global_ycm_extra_conf='/home/pony/.vim/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf='/home/chengxiang/.vim/.ycm_extra_conf.py'
 "" turn on completion in comments
 let g:ycm_complete_in_comments=1
 "" load ycm conf by default
