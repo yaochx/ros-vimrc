@@ -47,6 +47,7 @@ Plugin 'morhetz/gruvbox'
 Plugin 'ErichDonGubler/vim-sublime-monokai'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'itchyny/lightline.vim'
 "Plugin 'vim-syntastic/syntastic'
@@ -82,6 +83,30 @@ let g:NERDTreeMouseMode=3
 " ctrlp
 let g:ctrlp_working_path_mode='ra'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " ignored files on MacOSX/Linux
+" rainbow_colorpairs
+let g:rbpt_colorpairs = [
+                        \ ['brown',       'RoyalBlue3'],
+                        \ ['Darkblue',    'SeaGreen3'],
+                        \ ['darkgray',    'DarkOrchid3'],
+                        \ ['darkgreen',   'firebrick3'],
+                        \ ['darkcyan',    'RoyalBlue3'],
+                        \ ['darkred',     'SeaGreen3'],
+                        \ ['darkmagenta', 'DarkOrchid3'],
+                        \ ['brown',       'firebrick3'],
+                        \ ['gray',        'RoyalBlue3'],
+                        \ ['darkmagenta', 'DarkOrchid3'],
+                        \ ['Darkblue',    'firebrick3'],
+                        \ ['darkgreen',   'RoyalBlue3'],
+                        \ ['darkcyan',    'SeaGreen3'],
+                        \ ['darkred',     'DarkOrchid3'],
+                        \ ['red',         'firebrick3'],
+                        \ ]
+let g:rbpt_max = 16
+let g:rbpt_loadcmd_toggle = 0
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
 " syntastic
 " set statusline+=%#warningmsg#
 " set statusline+=%{SyntasticStatuslineFlag()}
@@ -199,8 +224,7 @@ autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
 " if you install vim-operator-user
 " autocmd FileType c,cpp,objc map <buffer><Leader>x <Plug>(operator-clang-format)
 
-map <C-t> :NERDTree<CR>
-map <F4> :NERDTreeToggle<CR>
+map <leader>t :NERDTreeToggle<CR>
 
 nmap J 5j  
 nmap K 5k  
